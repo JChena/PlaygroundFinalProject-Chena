@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    My blog
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock css_files%}
+
+{% block content %}
+    
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/luckycat.jpg' %}" alt="Julieta - The author of this blog.">
+            <h2>Julieta's Blog</h2>
+        </header>
+        <p>Hi! I am Julieta and this blog tells my experience diving into the tech world!</p>
+    </section>
+    
+    <section id="latest-posts">
+        <h2>My latest posts</h2>
+        <ul>
+            {% for post in posts %}
+                {% include 'blog/includes/post.html' %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="who">
+        <h2>Who am I & What I do</h2>
+        <p>I am an ever curious person who loves to learn and delve into new things.</p>
+        <p>My goal is to keep on growing as a Python developer and Data Analyst and share my experience to help others make up their minds and chase their own dreams! </p>
+    </section>
+
+{% endblock content %}

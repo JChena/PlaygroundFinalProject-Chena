@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Log In
+{% endblock title %}
+
+{% block css_files %}
+    
+{% endblock css_files%}
+
+{% block content %}
+    
+    <h2>Login</h2>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="'submit">Log In</button>
+    </form>
+
+{% endblock content %}
